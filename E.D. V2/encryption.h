@@ -19,7 +19,7 @@ class EncryptDecrypt {
     
     public: 
         void createEncryption(int[]);
-        std::vector<std::vector<int>> startDecryption();
+        std::vector< std::vector<int> > startDecryption();
 };
 
 
@@ -53,9 +53,9 @@ void EncryptDecrypt::createEncryption(int arr[])
 //loops through the vector and decrypts each item
 //returns the decrypted item as a nested vector of ints inside,
 //the main vector.
-std::vector<std::vector<int>> EncryptDecrypt::startDecryption()
+std::vector< std::vector<int> > EncryptDecrypt::startDecryption()
 {
-    std::vector<std::vector<int>> decryptedItems;
+    std::vector< std::vector<int> > decryptedItems;
     std::vector<std::string> items = pullETF();
     std::vector<std::string>::iterator ptr; 
 

@@ -5,9 +5,9 @@ class EncryptDecrypt endec;
 
 int main()
 {
-    // int test[4] = {78, 122, 105, 116};
-    // endec.createEncryption(test);
-    std::vector<std::vector<int>> testV = endec.startDecryption();
+    int test[4] = {78, 122, 105, 116};
+    endec.createEncryption(test);
+    std::vector< std::vector<int> > testV = endec.startDecryption();
     
     for(int i=0; i<1; i++)
     {
@@ -16,6 +16,6 @@ int main()
             std::cout << testV[0][x] << std::endl;
         }
     }
-    
+    throw "HElP ME";
     return 0;
 }
