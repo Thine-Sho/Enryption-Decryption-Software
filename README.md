@@ -5,8 +5,8 @@ Built this programme because I had no knowledge of c++ libraries that worked wit
       - **createEncryption();** 
         Takes an Array of integers;
       > Example: 
-      > int arr[4] = {69, 89, 40, 67};
-      > createEncryption(arr);
+       - int arr[4] = {69, 89, 40, 67};
+       - createEncryption(arr);
       
       - **startDecryption();**
         Returns a 2 dementional vector of keys
