@@ -19,5 +19,6 @@ int main()
     int test[4] = {78, 122, 105, 116};
     endec.createEncryption(test);
     std::vector< std::vector<int> > testV = endec.startDecryption();
+    std::cout << "Hello World: " << testV[0][1];
     return 0;
 }
