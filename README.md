@@ -3,7 +3,12 @@ Built this programme because I had no knowledge of c++ libraries that worked wit
   - VERSION #1: made using function, no error handling/fast processing
     - **METHODS:**
       - createEncryption(); 
-      Takes an Array of integers;
+        Takes an Array of integers;
+      > Example:
+      
+        int arr[4] = {69, 89, 40, 67};
+        createEncryption(arr);
+      
       - startDecryption();
       Returns a 2 dementional vector
       of keys
