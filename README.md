@@ -10,10 +10,10 @@ Built this programme because I had no knowledge of c++ libraries that worked wit
     - **PUBLIC METHODS:**
     
     
-      - **createEncryption();** 
-        Takes an Array of integers;
+      - **void createEncryption(int[]);** 
+        Takes an Array of integers of length keyLength;
         
-      - **startDecryption();**
+      - **std::vector< std::vector<int> > startDecryption();**
         Returns a 2 dementional vector of keys
         
         
