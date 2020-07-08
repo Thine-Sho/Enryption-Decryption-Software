@@ -32,4 +32,7 @@ Built this programme because I had no knowledge of c++ libraries that worked wit
         
       - **std::vector< std::vector<int> > startDecryption();**
         Returns a 2 dementional vector of keys
+  
+      - int getKeyPosition(const int[]);
+        Returns position of Key in Key file
       
