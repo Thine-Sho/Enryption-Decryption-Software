@@ -20,10 +20,8 @@ class EncryptDecrypt {
         inline int getKeyLength();
         void setFile(const std::string);
         void setKeyLength(const int);
-    
-    public: 
-        void createEncryption(int[]);
         std::vector< std::vector<int> > startDecryption();
+        void createEncryption(int[]);
 };
 
 
