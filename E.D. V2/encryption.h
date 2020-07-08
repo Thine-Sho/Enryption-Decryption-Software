@@ -16,6 +16,9 @@ class EncryptDecrypt {
     protected:
         std::vector<std::string> pullETF();
         void sendETF(std::string);  
+        void truncateKeyFile();
+        inline int getKeyLength();
+        void setKeyLength(const int newKeyLength);
     
     public: 
         void createEncryption(int[]);
@@ -23,6 +26,22 @@ class EncryptDecrypt {
 };
 
 
+/*
+    ###########################
+    ### SETTERS AND GETTERS ###
+    ###########################
+*/
+
+
+    inline int EncryptDecrypt::getKeyLength()
+    {
+        return keyLength;
+    }
+
+    void EncryptDecrypt::setKeyLength(const int newKeyLength)
+    {
+        keyLength = newKeyLength;
+    }
 
 
 /*
@@ -78,8 +97,13 @@ std::vector< std::vector<int> > EncryptDecrypt::startDecryption()
 */
 
 
-
-
+void EncryptDecrypt::truncateKeyFile()
+{
+    std::ofstream file;
+    file.open(keyFile, std::ios::trunc);
+    std::cout << "FILE EMPTIED";
+    file.close();
+}
 
 //Sends each Encrypted string to file;
 void EncryptDecrypt::sendETF(std::string item)
