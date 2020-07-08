@@ -15,13 +15,16 @@ class EncryptDecrypt {
         void sendETF(const std::string);  
         std::vector<std::string> pullETF();
         
+    protected: //IMPORTANT METHODS
+        void createEncryption(const int[]);
+        std::vector< std::vector<int> > startDecryption();
+
     protected:
         void truncateKeyFile();
         inline int getKeyLength();
         void setFile(const std::string);
         void setKeyLength(const int);
-        std::vector< std::vector<int> > startDecryption();
-        void createEncryption(int[]);
+        int getKeyPosition(const int[]);
 };
 
 
@@ -31,20 +34,45 @@ class EncryptDecrypt {
     ###########################
 */
 
-    void EncryptDecrypt::setFile(const std::string newKeyFile)
-    {
-        keyFile = newKeyFile;
-    }
+void EncryptDecrypt::setFile(const std::string newKeyFile)
+{
+    keyFile = newKeyFile;
+}
 
-    inline int EncryptDecrypt::getKeyLength()
-    {
-        return keyLength;
-    }
+inline int EncryptDecrypt::getKeyLength()
+{
+    return keyLength;
+}
 
-    void EncryptDecrypt::setKeyLength(const int newKeyLength)
-    {
-        keyLength = newKeyLength;
+void EncryptDecrypt::setKeyLength(const int newKeyLength)
+{
+    keyLength = newKeyLength;
+}
+
+
+int EncryptDecrypt::getKeyPosition(const int key[])
+{
+    std::vector<std::vector<int>> vItems = startDecryption();
+    std::vector< std::vector<int> >::iterator row; 
+    std::vector<int>::iterator col; 
+    int it, xal, index = 0, position;
+
+    for (row = vItems.begin(); row != vItems.end(); row++, index++) {
+        xal = 0; it = 0;
+        for (col = row->begin(); col != row->end(); col++, it++) {
+            if(key[it] == *col)
+            {
+                ++xal;
+                if(xal == keyLength)
+                {
+                    position = index;
+                    break;
+                }
+            }
+        }
     }
+    return position;
+}
 
 
 
@@ -55,9 +83,10 @@ class EncryptDecrypt {
 */
 
 
+
 //This method takes an array of int, casts it to a string
 //of random chars, then sends the encrypted string to a file.
-void EncryptDecrypt::createEncryption(int arr[])
+void EncryptDecrypt::createEncryption(const int arr[])
 {
     std::string encryptedKey;
     srand(time(0)); 
@@ -92,16 +121,11 @@ std::vector< std::vector<int> > EncryptDecrypt::startDecryption()
 
 
 
-
-
 /*
     ########################
     ### FILE HANDINGLING ###
     ########################
 */
-
-
-
 
 
 //Sends each Encrypted string to file;
