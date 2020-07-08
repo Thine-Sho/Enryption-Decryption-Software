@@ -1,8 +1,6 @@
 # Enryption-Decryption-Software
 Built this programme because I had no knowledge of c++ libraries that worked with Arduino to encrypt and or decrypt keypad inputs.
 
- ** GENERALLY PROTECTED CLASS
-
   - VERSION #1: made using function, no error handling/fast processing
   
     - **PUBLIC METHODS:**
