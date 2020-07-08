@@ -13,9 +13,9 @@ class EncryptDecrypt {
         std::string encrypt(const int, const int);
         std::vector<int> decrypt(const std::string);
         void sendETF(const std::string);  
+        std::vector<std::string> pullETF();
         
     protected:
-        std::vector<std::string> pullETF();
         void truncateKeyFile();
         inline int getKeyLength();
         void setFile(const std::string);
