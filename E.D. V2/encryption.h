@@ -6,7 +6,7 @@
 
 class EncryptDecrypt {
     private: //DATA TYPES
-        const int keyLength = 4;
+        int keyLength = 4;
         const std::string keyFile = "keys.dat";
         
     private: //METHODS
