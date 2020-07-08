@@ -27,7 +27,7 @@ Built this programme because I had no knowledge of c++ libraries that worked wit
       - **void setKeyLength(const int);**
          Updates allowed length of Keys
          
-      - **void createEncryption(int[]);** 
+      - **void createEncryption(const int[]);** 
         Takes an Array of integers of length keyLength;
         
       - **std::vector< std::vector<int> > startDecryption();**
