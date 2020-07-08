@@ -3,6 +3,10 @@ Built this programme because I had no knowledge of c++ libraries that worked wit
 
   - VERSION #1: made using function, no error handling/fast processing
   
+    > ** DEPRECATED **
+  
+  - VERSION #2: made using Class structure, no error handling/fast processing
+
     - **PUBLIC METHODS:**
     
     
@@ -29,4 +33,3 @@ Built this programme because I had no knowledge of c++ libraries that worked wit
       - **void setKeyLength(const int);**
          Updates allowed length of Keys
       
-  - VERSION #2: made using Class structure, no error handling/fast processing
