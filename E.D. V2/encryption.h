@@ -10,16 +10,16 @@ class EncryptDecrypt {
         std::string keyFile = "keys.dat";
         
     private: //METHODS
-        std::string encrypt(int, int);
-        std::vector<int> decrypt(std::string);
+        std::string encrypt(const int, const int);
+        std::vector<int> decrypt(const std::string);
+        void sendETF(const std::string);  
         
     protected:
         std::vector<std::string> pullETF();
-        void sendETF(std::string);  
         void truncateKeyFile();
-        void setFile(const std::string);
         inline int getKeyLength();
-        void setKeyLength(const int newKeyLength);
+        void setFile(const std::string);
+        void setKeyLength(const int);
     
     public: 
         void createEncryption(int[]);
@@ -38,7 +38,6 @@ class EncryptDecrypt {
         keyFile = newKeyFile;
     }
 
-
     inline int EncryptDecrypt::getKeyLength()
     {
         return keyLength;
@@ -48,6 +47,7 @@ class EncryptDecrypt {
     {
         keyLength = newKeyLength;
     }
+
 
 
 /*
@@ -103,16 +103,11 @@ std::vector< std::vector<int> > EncryptDecrypt::startDecryption()
 */
 
 
-void EncryptDecrypt::truncateKeyFile()
-{
-    std::ofstream file;
-    file.open(keyFile, std::ios::trunc);
-    std::cout << "FILE EMPTIED";
-    file.close();
-}
+
+
 
 //Sends each Encrypted string to file;
-void EncryptDecrypt::sendETF(std::string item)
+void EncryptDecrypt::sendETF(const std::string item)
 {
     std::ofstream file;
     file.open(keyFile, std::ios::app);
@@ -144,6 +139,13 @@ std::vector<std::string> EncryptDecrypt::pullETF()
     return item;
 }
 
+void EncryptDecrypt::truncateKeyFile()
+{
+    std::ofstream file;
+    file.open(keyFile, std::ios::trunc);
+    std::cout << "FILE EMPTIED";
+    file.close();
+}
 
 
 
@@ -159,7 +161,7 @@ std::vector<std::string> EncryptDecrypt::pullETF()
 // an array. Takes each odd indexs element. casts to char and
 //assigns each element to a new vector.
 //returns the vector of integers
-std::vector<int> EncryptDecrypt::decrypt(std::string item)
+std::vector<int> EncryptDecrypt::decrypt(const std::string item)
 {
     std::vector<int> deCode;
     for(int i=0; i<(keyLength)*2; i++)
@@ -171,7 +173,7 @@ std::vector<int> EncryptDecrypt::decrypt(std::string item)
 
 //Encrypts each number from the array.
 //Made to run in a loop
-std::string EncryptDecrypt::encrypt(int item, int encrNum)
+std::string EncryptDecrypt::encrypt(const int item, const int encrNum)
 {
     std::string eItem;
     char c1 = (char) item; 
@@ -181,10 +183,3 @@ std::string EncryptDecrypt::encrypt(int item, int encrNum)
     eItem += c2;
     return eItem;
 }
-
-
-
-
-
-
-
