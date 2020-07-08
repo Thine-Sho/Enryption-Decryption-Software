@@ -7,7 +7,7 @@
 class EncryptDecrypt {
     private: //DATA TYPES
         int keyLength = 4;
-        const std::string keyFile = "keys.dat";
+        std::string keyFile = "keys.dat";
         
     private: //METHODS
         std::string encrypt(int, int);
@@ -17,6 +17,7 @@ class EncryptDecrypt {
         std::vector<std::string> pullETF();
         void sendETF(std::string);  
         void truncateKeyFile();
+        void setFile(const std::string);
         inline int getKeyLength();
         void setKeyLength(const int newKeyLength);
     
@@ -31,6 +32,11 @@ class EncryptDecrypt {
     ### SETTERS AND GETTERS ###
     ###########################
 */
+
+    void EncryptDecrypt::setFile(const std::string newKeyFile)
+    {
+        keyFile = newKeyFile;
+    }
 
 
     inline int EncryptDecrypt::getKeyLength()
