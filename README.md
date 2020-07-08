@@ -35,4 +35,21 @@ Built this programme because I had no knowledge of c++ libraries that worked wit
   
       - **int getKeyPosition(const int[]);**
         Returns position of Key in Key file
+        
+        
+      
+    - **PRIVATE METHODS:**
+    
+    
+      - **std::string encrypt(const int, const int);**
+        Encrypts Key
+        
+      - **std::vector<int> decrypt(const std::string);**
+        Decrypts Key
+  
+      - **void sendETF(const std::string);**
+        Sends Key to file
+        
+      - **std::vector<std::string> pullETF();**
+        Pulls key from File
       
