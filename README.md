@@ -7,13 +7,17 @@ Built this programme because I had no knowledge of c++ libraries that worked wit
   
     - **PUBLIC METHODS:**
     
+    
       - **createEncryption();** 
         Takes an Array of integers;
         
       - **startDecryption();**
         Returns a 2 dementional vector of keys
+        
+        
      
     - **PROTECTED METHODS:**
+    
     
       - **void truncateKeyFile();**
         Truncates the Key container file
