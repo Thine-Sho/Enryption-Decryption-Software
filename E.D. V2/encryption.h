@@ -188,7 +188,7 @@ std::vector<int> EncryptDecrypt::decrypt(const std::string item)
     std::vector<int> deCode;
     for(int i=0; i<(keyLength)*2; i++)
     {
-        deCode.push_back(item[i++]);
+        deCode.push_back((int) item[i++]);
     }
     return deCode;
 }
